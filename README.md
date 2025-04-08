@@ -103,7 +103,7 @@ env.render()
 
 ## Contributing
 
-Contributions and feedback are welcome! If you have ideas or improvements, please open an issue or submit a pull request.
+Contributions and feedback are welcome! If you have ideas or improvements, please open an issue or submit a pull request or email me at: ravari.a@northeastern.edu
 
 ## License
 
