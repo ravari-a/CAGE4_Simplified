@@ -1,11 +1,13 @@
 # Simplified Multi-Agent Cybersecurity Environment
 
-This repository contains a **simplified simulation environment** for multi-agent cyber defense challenges. It is inspired by the original TTCP CAGE Challenge environment but has been restructured for flexibility and ease-of-use. In this new codebase, you can easily define new attacker types and configure the network structure by setting the number of user hosts and servers in each subnet. In addition, we have implemented zero trust actions (at the subnet level) within the environment.
+This repository contains a **simplified simulation environment** for multi-agent cyber defense challenges. It is inspired by the original TTCP CAGE Challenge environment but has been restructured for flexibility and ease-of-use. This project is built upon the main [CAGE4 repository](https://github.com/cage-challenge/cage-challenge-4).
+
+In this new codebase, you can easily define new attacker types and configure the network structure by setting the number of user hosts and servers in each subnet. In addition, we have implemented a range of access control actions—including normal access control, decoy actions, and subnet-level access control—to mimic real-world zero trust security architectures.
 
 ## Features
 
 - **Simplified Environment:**  
-  A streamlined version of the original CAGE simulation that focuses on key elements, without the overhead of unnecessary packages.
+  A streamlined version of the original CAGE simulation focusing on key elements without the overhead of unnecessary packages.
   
 - **Flexible Network Structure:**  
   Easily configure the simulation by setting the number of green agents (user hosts) and servers per zone. This new structure adapts based on your configuration settings.
@@ -19,45 +21,37 @@ This repository contains a **simplified simulation environment** for multi-agent
   These classes provide a baseline for simulating different attack strategies.
 
 - **Zero Trust Actions:**  
-  Implemented zero trust actions for network defenders. Blue agents now have actions like enabling/disabling subnet-level access control, which mimics real-world zero trust security architectures.
+  Blue agents now have a comprehensive suite of access control actions:
+  - **Normal Access Control and Decoy Actions:**  
+    Blue agents can enable or disable access control on individual green agents and deploy decoy services to detect and counter malicious activity.
+  - **Subnet-Level Access Control:**  
+    Additionally, Blue agents can isolate entire network subnets by enabling or disabling access control at the subnet level, effectively modifying the network topology on the fly.
 
 - **Reduced Dependencies:**  
   This environment requires fewer packages than the original setup, making it more lightweight and easier to install.
 
 ## Dependencies
 
-To run this simulation environment, ensure you have Python 3.x installed along with the following packages:
+This project requires Python 3.x. The following libraries are used with these specific versions:
 
+- **Gym Libraries:**
+  - `gym==0.26.2`
+  - `gymnasium==0.28.1`
+  
+- **RLlib:**
+  - `ray[rllib]`
+  - `lz4==4.3.3`
+  
+Additionally, the project utilizes:
 - `networkx`
 - `numpy`
-- `gymnasium`
-- `ray[rllib]`
 - `matplotlib`
 
-You can install these packages using pip:
-
-```bash
-pip install networkx numpy gymnasium ray[rllib] matplotlib
-
-```
-
-## Installation
-
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-   ```
-
-2. **Install the Dependencies:**  
-   Use the command above or add the dependencies to your `requirements.txt` file and run:
-   ```bash
-   pip install -r requirements.txt
-   ```
+You can install these dependencies using pip.
 
 ## Usage
 
-You can integrate the environment into your reinforcement learning pipeline or use it as a standalone simulation. Below is an example snippet on how to create and interact with the environment:
+You can integrate the environment into your reinforcement learning pipeline or use it as a standalone simulation. Below is an example snippet showing how to create and interact with the environment:
 
 ```python
 import gymnasium as gym
@@ -82,6 +76,7 @@ obs, rewards, terminated, truncated, info = env.step(action_dict)
 
 # Optionally, render the current network graph
 env.render()
+
 ```
 
 ## Code Structure
