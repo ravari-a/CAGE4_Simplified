@@ -2,7 +2,7 @@
 
 This repository contains a **simplified simulation environment** for multi-agent cyber defense challenges. It is inspired by the original TTCP CAGE Challenge environment but has been restructured for flexibility and ease-of-use. This project is built upon the main [CAGE4 repository](https://github.com/cage-challenge/cage-challenge-4).
 
-In this new codebase, you can easily define new attacker types and configure the network structure by setting the number of user hosts and servers in each subnet. In addition, we have implemented a range of access control actions—including normal access control, decoy actions, and subnet-level access control—to mimic real-world zero trust security architectures.
+In this new codebase, you can easily define new attacker types and configure the network structure by setting the number of user hosts and servers in each subnet. In addition, we have implemented a range of access control actions(including normal access control, decoy actions, and subnet-level access control) to mimic real-world zero trust security architectures.
 
 ## Features
 
