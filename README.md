@@ -93,12 +93,6 @@ env.render()
 - **Network & Graph Logic:**  
   Uses NetworkX to create and update a dynamic network graph, representing zones, walls, and connected hosts. The graph is updated during each step as agents take their actions.
 
-## Zero Trust Actions
-
-Blue agents now have the ability to perform subnet-level actions:
-- **ENABLE_SUBNET_AC / DISABLE_SUBNET_AC:**  
-  These actions simulate a zero trust security model by temporarily isolating or rejoining segments of the network, effectively modifying the network topology on the fly.
-
 ## Extending the Environment
 
 - **New Attackers:**  
