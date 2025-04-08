@@ -1,4 +1,3 @@
-```markdown
 # Simplified Multi-Agent Cybersecurity Environment
 
 This repository contains a **simplified simulation environment** for multi-agent cyber defense challenges. It is inspired by the original TTCP CAGE Challenge environment but has been restructured for flexibility and ease-of-use. In this new codebase, you can easily define new attacker types and configure the network structure by setting the number of user hosts and servers in each subnet. In addition, we have implemented zero trust actions (at the subnet level) within the environment.
@@ -39,6 +38,7 @@ You can install these packages using pip:
 
 ```bash
 pip install networkx numpy gymnasium ray[rllib] matplotlib
+
 ```
 
 ## Installation
